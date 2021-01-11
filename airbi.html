@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Karan Bhatia</title>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H9B1FYSRWE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H9B1FYSRWE');
+</script>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main1.0.css" />
+		<meta name="image" property="og:image" content="https://karan.wiki/images/risk_matrix.png">
+		<meta name="description" property="og:description" content="RBI using AI">
+		<meta name="author" content="Karan Bhatia">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<!-- Libs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+		
+	</head>
+	<body class="is-preload">
+		<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-597GCKS"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header" class="alt">
+					<h1><a href="index.html">Karan Bhatia</a></h1>
+					
+					<p>Risk-based Visual Inspection using Artificial Intelligence</p><br />
+				</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="#intro" class="active">Summary</a></li>
+							<li><a href="#demo">Demo</a></li>
+							<!-- <li><a href="#mentions">Media</a></li>
+							<li><a href="#cta">Projects</a></li> -->
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Introduction -->
+							<section id="intro" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2>Risk-based Visual Inspection using Artificial Intelligence and Machine Vision</h2>
+										</header>
+											<h3><b>Introduction</b></h3>
+
+											<p>The most common type of non-destructive testing: Visual Inspection, is used to detect visible flaws such as corrosion, joint defects, etc. A risk-based visual inspection, a high-level inspection technique, prioritizes the inspection of the equipment that has a higher risk of failure.
+
+I want to share an experimental model that uses machine vision(MV) and Artificial intelligence(AI) that has been trained to perform a risk-based visual inspection in real-time. The model can be trained to not only identify but also quantify the extent of the defect. Ranking it from higher risk to lowest risk. This allows us to prioritize a detailed inspection of high priority/critical equipment first.
+ </p>
+ <hr />
+										<h3><b>Framework</b></h3>
+
+										<p>Starting with a basic form of AI: machine learning (ML). The algorithm is a combination of different ML models that interact with each other. The basic framework of the model is described in the figure below. The boxes represent different ML models that communicate with each other. In this article, I want to give a brief overview of some of the models. As an experiment, I have deployed an “Assign POF” (Probability of Failure) model using a python-based server. Details in the last section.</p>
+										
+									</div>
+									
+									
+
+
+								</div>
+										<span class="image fit"><img src="images/framework.png" alt="" /></span>
+								<hr />
+										<h3><b>Training dataset</b></h3>
+										<p>The biggest challenge for any machine learning or AI model has accurate training data. For this experiment, I used images of piping, corrosion defects, etc., available on the internet. And there aren’t many. Just over a hundred relevant pictures and half of them don’t match the requirements I established for training data.
+
+											Fortunately, there is a not-so-new concept called transfer learning in the field of ML. Just like human neural cells, the AI model can store knowledge gained while solving one problem and apply it to a different but related problem. We can use this powerful concept to expand the training dataset. Finally, the pre-trained model is trained with actual piping pictures. </p>
+								<hr />
+								<h3><b>The Parameters</b></h3>
+								<p>Labelling of the dataset is equally important for an efficient ML model. To overcome the lack of a big dataset, I’ve used a supervised machine learning approach. This means, just like in the industrial codes (like API-580,581), I defined the parameters and labelled the datasets accordingly.  This is what is done in an actual Risk-based Inspection (RBI). 
+								</p>
+								<hr />
+								<h3><b>Handling uncertainty</b></h3>
+								<p>Despite leveraging the concepts like transfer learning and highly supervised datasets, the model won’t give very accurate predictions. If you think about it, the model has effectively seen less than a hundred images of piping and components. And as you would expect the model comes out confused when you show it a test image. 
+									There is a concept called Bayesian inference, that researchers like to use to handle uncertainty. Providing a Bayesian logic to the model eliminates some of that uncertainty. Of course, it comes with a cost. The model becoming over-confident of the predictions. But that can be solved once the model has experienced a large dataset, so for now, it’s a great starting point. 
+									For interested readers, I’ll leave a link to some of my other research at the end, where I’ve used Bayesian inference.
+									</p>
+								<hr />
+								<h3><b>Testing</b></h3>
+								<p>Here are some results of the testing of the model. 
+
+									This version of the model is tasked to identify and quantify the corrosion. I’ve tested it on the propane tank at my home. For the lack of field image, I'd argue the propane tank resembles industrial pressure vessel you'd find in the field. And as I mentioned earlier, knowledge of ML is easily transferable. 
+								</p>
+								<div class="box alt">
+								<div class="row gtr-uniform">
+								<div class="col-6"><span class="image fit"><img src="images/tank.png" alt="" /></span></div>
+								
+								</div>
+								</div>
+
+								<p>Some more results of testing on piping components: joints and at pipe supports.</p>
+								<div class="box alt">
+									<div class="row gtr-uniform">
+									<div class="col-6"><span class="image fit"><img src="images/joints.png" alt="" /></span> <a href="https://www.shutterstock.com/image-photo/rust-damage-paint-corrosion-flange-bolt-1853476789" target="_blank"><i><h4>Original Image</h4></i></a></div>
+									
+									</div>
+									</div>
+							
+
+								<div class="box alt">
+									<div class="row gtr-uniform">
+									<div class="col-12"><p><span class="image left"><img src="images/Support.png" alt="" /></span>As you can see there are some false positives at water and grass (tank). The reason is that the model has not seen water or grass in training. That is why the image needs to be passed through an object identifier before it goes to the risk quantifier. <a href="https://www.shutterstock.com/image-photo/atmospheric-corrosion-offshore-on-pipe-support-1730855626" target="_blank"><i><h4>Original Image</h4></i></a> </div>
+									
+									</div>
+									</div>
+
+								<p>Here is output from another model tasked to assign risk and make a risk matrix for a batch of five different pipes (consequence of failure randomly assumed).</p>
+								<div class="box alt">
+								<div class="row gtr-uniform">
+								<div class="col-6"><span class="image fit"><img src="images/risk_matrix.png" alt="" /></span> </div>
+								
+								</div>
+								</div>
+							</section>
+
+							<!-- Second Section -->
+
+								<section id="demo" class="main">
+								<hr />
+								<h3><b>Demo</b></h3>
+								<p>I am still trying to further fine-tune the entire model. For demonstration purposes, I’ve made a small python-application for the “Assign-POF” model. </p>
+								</br>
+								<p>What does it do?
+								</p>
+								<p>It takes an image, compares it with what it has memorized, compares it with the parameters of the risk assessments and estimates its probability. A few things to consider:
+
+									The model is undertrained and has a data-bias. It can only give accurate perditions on certain kinds of images that it understands. 
+									
+									As described in the framework figure, this is the “Assign-POF” model only. I’ve very limited programming skills, not enough to put the entire model on the server. So, it will try to assign POF on whatever you throw at it, even cat pictures. Ideally, this will be filtered out by the “identify Equipment type” model, so that the model will only see the defects that it has to quantify. </p>
+
+								</br>
+								<p>Conditions:</p>
+								<p>For the training of the model, I’ve very carefully labelled the parameters that integrity engineers use to quantify the risk. For example, pitting corrosion gets a higher probability of failure than surface paint coating damage. For the dataset, I’ve selected the images that satisfy the regulatory requirements for Visual Inspection. <b>So the model expects the input image in a similar format. </b>
+
+									As an example, the inspection code by DNVGL-CG-0051, provides the following guidelines for a visual inspection. 
+								</br>
+									
+									<i>The luminance at the surface shall be minimum 500 lx. If required to obtain a good contrast and relief effect between imperfections and background, an additional light source should be used. All techniques and options that will be able to enhance the detectability of defects are allowed as far as the surface will not be damaged and/or the product functionality will not be influenced. For performance of direct inspection, the access shall be sufficient to place the eye within 600 mm of the surface to be inspected and at an angle not less than approximately 30°”</i>
+								</p>
+								</br>
+								</br>
+							
+								<hr />
+							
+								<header class="major">
+								<p>Try it out yourself. Use your own image or take one from the internet that you are allowed to use.</p>
+							</header>
+								<a href="https://kbrbi.xyz" class="button primary fit" target="_blank">Risk-based visual inspection using AI</a>
+						</br>
+						</br>
+								<p>For now, the online model doesn't 'learn' (or save) from the uploaded image. Ideally the model can continiously improve as it learns from new images. </p>
+									
+						<br>
+						<br>
+						<hr />
+						<h3><b>Reference</b></h3>
+						<br>
+						<p><i><a href="https://doi.org/10.1016/j.jlp.2019.103974" target="_blank">Paper 1</a></i></p>
+						<p><i><a href="https://doi.org/10.1016/j.oceaneng.2018.12.060" target="_blank">Paper 2</a></i></p>				
+								</footer> 
+							</section> 
+
+						
+						
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+						
+					<section>
+						<h2>Connect with me!</h2>
+						<p> Ideas, feedback, suggestions or just want to chat? I'd love that. </br> Please reach out. </p>
+						<dl class="alt">
+							<dt>Email</dt>
+							<dd><a href="#">kb@karan.wiki</a></dd>
+						</dl>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/itskaranbhatia" target="blank" class="icon brands fa-linkedin alt"><span class="label">Linkedin</span></a></li>
+							<li><a href="mailto:kb@karan.wiki" class="icon regular fa-envelope alt"><span class="label">Email</span></a></li>
+							<li><a href="https://karan-b.medium.com/" target="blank" class="icon brands fa-medium alt"><span class="label">Linkedin</span></a></li>
+							
+						</ul>
+					</section>
+					<p class="copyright"> Copyright &copy; 2020-21. Karan Bhatia <br />  
+						Design theme by <a href="https://html5up.net" target="_blank">HTML5 UP</a> </p>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src='../lib/align_pair_quad.js'></script>
+			<script src='../lib/pairwise_alignment_dna.js'></script>
+			<script src='../js/util.js'></script>
+			<script src='../js/Linegraph.js'></script>
+			
+			</script>
+
+	</body>
+</html>
