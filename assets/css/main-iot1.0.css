@@ -1820,6 +1820,10 @@ input, select, textarea {
 		border-color: rgba(255, 255, 255, 0.35);
 	}
 
+
+		
+
+	
 /* Button */
 
 	input[type="submit"],
@@ -1839,7 +1843,7 @@ input, select, textarea {
 		border: 0;
 		cursor: pointer;
 		display: inline-block;
-		font-weight: 300;
+		font-weight: 400;
 		height: 2.75em;
 		line-height: 2.75em;
 		min-width: 9.25em;
@@ -1888,6 +1892,22 @@ input, select, textarea {
 		.button.large {
 			font-size: 1.35em;
 		}
+		/* custom button KB 
+
+		input[type="submit"].largekb,
+		input[type="reset"].largekb,
+		input[type="button"].largekb,
+		button.largekb,
+		.button.largekb {
+			background-color: #8cc9f0;
+			color: #ffffff !important;
+			font-size: 1.35em;
+			height:10em;
+			width:5em;
+			vertical-align: middle;
+			
+		}
+		*/
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
 		input[type="reset"].disabled,
@@ -2409,6 +2429,18 @@ input, select, textarea {
 			.image.main img {
 				width: 100%;
 			}
+		
+					
+		.image.iot {
+			display: block;
+			margin-left: 25%;
+  			margin-right: 25%;
+  			width: 50%;
+		}
+
+			.image.iot img {
+				width: 70%;
+			}
 
 /* List */
 
@@ -2438,14 +2470,29 @@ input, select, textarea {
 		}
 
 			ul.alt li {
-				border-top: solid 1px;
-				padding: 0.5em 0;
+				border-top: dashed 1px;
+				padding: 0.6em 0;
 			}
 
 				ul.alt li:first-child {
 					border-top: 0;
 					padding-top: 0;
 				}
+		ul.alt2 {
+			list-style: none;
+			padding-left: 0;
+		}
+
+			ul.alt2 li {
+				border-top: solid 1px;
+				padding: 0.2em 0;
+			}
+
+				ul.alt2 li:first-child {
+					border-top: 0;
+					padding-top: 0;
+				}
+		
 
 	dl {
 		margin: 0 0 2em 0;
@@ -2482,6 +2529,10 @@ input, select, textarea {
 	ul.alt li {
 		border-top-color: rgba(255, 255, 255, 0.35);
 	}
+	ul.alt2 li {
+		border-top-color: rgba(42, 41, 48, 0.1);
+	}
+	
 
 	dl dt {
 		color: #ffffff;
@@ -2629,7 +2680,8 @@ input, select, textarea {
 /* Section/Article */
 
 	section.special, article.special {
-		text-align: center;
+		text-align: justify;
+		margin: 2%;
 	}
 
 	header.major {
@@ -3374,7 +3426,7 @@ input, select, textarea {
 		#main button,
 		#main .button {
 			background-color: transparent;
-			box-shadow: inset 0 0 0 1px #dddddd;
+			box-shadow: inset 0 0 0 2px #dddddd;
 			color: #636363 !important;
 		}
 
