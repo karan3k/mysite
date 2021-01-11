@@ -76,9 +76,9 @@
  <hr />
 										<h3><b>Framework</b></h3>
 
-										<p>A perfect industrial IOT system must have a reasonable number of inputs/outputs and a logic that can improve upon itself over time. In this article, I am sharing a very practical framework on how to achieve that using a case study. Here are the basic steps to accomplish that.</p>
+										<p>A perfect industrial IoT system must have a reasonable number of inputs/outputs and a logic that can improve upon itself over time. In this article, I am sharing a very practical framework on how to achieve that using a case study. Here are the basic steps to accomplish that.</p>
 										<ul class="alt">
-											<li>Step 1: Identify the goals you want to achieve from your IIOT system.</li>
+											<li>Step 1: Identify the goals you want to achieve from your IoT system.</li>
 											<li>Step 2: Analyze your system, gather available data and make a rough draft design.</li>
 											<li>Step 3: Optimize and design IoT logic architecture.</li>
 											<li>Step 4: Design a Prediction model.</li>
@@ -98,7 +98,7 @@
 										<h3><b>A case study on Naval Ship’s gas turbine propulsion system:</b></h3>
 										<p> For part 1 of this article, I will use a publicly available dataset so that you can follow along the steps. The data is provided by the Center for <a href="https://cml.ics.uci.edu/"><i>Machine Learning and Intelligent Systems</i></a> at the University of California. This is the <a href="http://archive.ics.uci.edu/ml/datasets/condition+based+maintenance+of+naval+propulsion+plants#"><i>link</i></a> to the original data. </p>
 										
-										<p>The data contains sensor readings of a simulated Naval Ship, frigate type, using Gas Turbine (GT) propulsion plant. The data is presented in vectors of 18 dimensions containing 16 sensors readings, which are shown below. </p>
+										<p>The data contains sensor readings of a simulated Naval Ship, frigate type, using Gas Turbine (GT) propulsion plant. The data is presented in vectors of 18 dimensions containing 16 sensor readings, which are shown below. </p>
 								
 										<table>
 											
@@ -134,10 +134,10 @@
 										<br>
 
 										<ul class="alt2">
-											<li><b>Step 1: Identify the goals you want to achieve from your IIOT system.</b></li>
+											<li><b>Step 1: Identify the goals you want to achieve from your IoT system.</b></li>
 											<li></li>
 										</ul>
-										<p>First, we need to clearly define our goal, what we hope to achieve from our IIOT system. Here we will use 16 sensor data to predict the compressor's efficiency using the Compressor decay state coefficient, the last-second variable in the column of the data frame. And of course, another goal is that we want to be able to use it for digital twin's capabilities like what-if scenarios, fault identifications etc. Our goal will drive what models we use in our next steps.</p>
+										<p>First, we need to clearly define our goal, what we hope to achieve from our IIoT system. Here we will use 16 sensor data to predict the compressor's efficiency using the Compressor decay state coefficient, the last-second variable in the column of the data frame. And of course, another goal is that we want to be able to use it for digital twin's capabilities like what-if scenarios, fault identifications etc. Our goal will drive what models we use in our next steps.</p>
 										
 										<br>
 
@@ -156,11 +156,11 @@
 										This is an important question. You may design an accurate IoT system with hundreds of sensors but tracking them all will create a bigger maintenance problem than the one we are trying to solve. We need to know which IoT sensors are absolutely essential for accurate prediction, in rank-wise order.</p>
 										<p><b>Can we remove any IoT Sensor without affecting the prediction accuracy?</b>
 										<br>If accuracy is decreased marginally, is the trade-off worth it?</p>
-										<p><b>Are any IOT sensors effectively redundant with each other? </b>
+										<p><b>Are any IoT sensors effectively redundant with each other? </b>
 										<br>For example, if vibrations on a motor increase linearly with its RPM, we don’t need to measure both.</p>
 											
 										<ul class="alt2">
-											<li><b>Step 3: Design and optimize the IOT logic architecture</b></li>
+											<li><b>Step 3: Design and optimize the IoT logic architecture</b></li>
 											<li></li>
 										</ul>
 										<p>In this step, we will try to answer the questions using some simple machine learning tools. Although it is possible to calculate this in excel, I strongly recommend using statistical computing software like Matlab, R packages, or Python libraries.</p>
@@ -210,7 +210,7 @@
 
 								<hr />
 								<h3><b>Conclusion</b></h3>
-								<p>We designed a perfect industrial IOT system and the logic to predict the compressor efficiency with a high accuracy leveraging simple statistical/machine learning tools. Moreover, by optimizing inputs and removing the redundant sensors, our IoT system is now <b>lean, simple and easily manageable</b>. We also know which sensors are essential for accurate prediction and which ones we can safely ignore temporarily without losing prediction accuracy if they close to failure.</p>
+								<p>We designed a perfect industrial IoT system and the logic to predict the compressor efficiency with a high accuracy leveraging simple statistical/machine learning tools. Moreover, by optimizing inputs and removing the redundant sensors, our IoT system is now <b>lean, simple and easily manageable</b>. We also know which sensors are essential for accurate prediction and which ones we can safely ignore temporarily without losing prediction accuracy if they close to failure.</p>
 								
 								<p>In part 2 of this article, I will continue with the remaining steps and will talk about how we can perform fault evolution analysis, calculating useful life and create scenario simulation logic for digital twin.</p>
 								
@@ -239,11 +239,11 @@
 						<ul class="icons">
 							<li><a href="https://www.linkedin.com/in/itskaranbhatia" target="blank" class="icon brands fa-linkedin alt"><span class="label">Linkedin</span></a></li>
 							<li><a href="mailto:kb@karan.wiki" class="icon regular fa-envelope alt"><span class="label">Email</span></a></li>
-							
+							<li><a href="https://karan-b.medium.com/" target="blank" class="icon brands fa-medium alt"><span class="label">Linkedin</span></a></li>
 							
 						</ul>
 					</section>
-					<p class="copyright"> Copyright &copy; 2020. Karan Bhatia <br />  
+					<p class="copyright"> Copyright &copy; 2020-21. Karan Bhatia <br />  
 						Design theme by <a href="https://html5up.net" target="_blank">HTML5 UP</a> </p>
 				</footer>
 
